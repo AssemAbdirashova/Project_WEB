@@ -1,0 +1,16 @@
+<div >
+    <label class="name">Category name:
+      <p>Username<input type="text"  [(ngModel)]="name"></p>
+    </label>
+  <button (click) = "add()" >add</button>
+
+  </div>
+  <ul class="col">
+    <ul *ngFor="let category of categories" class = "products">
+      <a routerLink="/category/{{category.id}}/products">
+       <h4 class="module">{{category.name}}</h4>
+      </a>
+      <button class="delete" title="delete category"
+        (click)="delete(category)">x</button>
+    </ul>
+  </ul>
